@@ -9,22 +9,22 @@ using phylogenetic distance}
   \item{physeq}{(Required). A \code{\link{phyloseq-class}}
   object containing, at a minimum, abundance
   (\code{\link{otuTable-class}}) and phylogenetic
-  (\code{\link[ape]{phylo}}) components. As a test, the
+  (\code{\link[ape]{phylo}}) components.  As a test, the
   accessors \code{\link{otuTable}} and \code{\link{tre}}
   should return an object without error.}
 
   \item{correction}{(Optional). A function. The function
   must be able to take a non-Euclidean
   \code{\link{dist}}ance object, and return a new
-  \code{dist}ance object that is Euclidean. If testing a
+  \code{dist}ance object that is Euclidean.  If testing a
   distance object, try \code{\link[ade4]{is.euclid}}.
 
   In most real-life, real-data applications, the
   phylogenetic tree will not provide a Euclidean distance
-  matrix, and so a correction will be needed. Two
+  matrix, and so a correction will be needed.  Two
   recommended correction methods are
   \code{\link[ade4]{cailliez}} and
-  \code{\link[ade4]{lingoes}}. The default is
+  \code{\link[ade4]{lingoes}}.  The default is
   \code{cailliez}, but not for any particularly special
   reason. If the patristic distance matrix turns out to be
   Euclidian, no correction will be performed, regardless of
@@ -82,7 +82,7 @@ using phylogenetic distance}
 # plot_ordination(GP, GP.dpcoa, color="SampleType")
 }
 \author{
-  Julia Fukuyama \email{julia.fukuyama@gmail.com}. Adapted
+  Julia Fukuyama \email{julia.fukuyama@gmail.com}.  Adapted
   for phyloseq by Paul J. McMurdie.
 }
 \references{

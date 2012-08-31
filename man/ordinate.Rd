@@ -40,12 +40,12 @@
   species. The calculation is performed by
   \code{\link{DPCoA}}(), which ultimately uses
   \code{\link[ade4]{dpcoa}} after making the appropriate
-  accessions/corrections of the data. }
+  accessions/corrections of the data.  }
   \item{NMDS}{Performs Non-metric MultiDimenstional Scaling
   of a sample-wise ecological distance matrix onto a
-  user-specified number of axes, \code{k}. By default,
+  user-specified number of axes, \code{k}.  By default,
   \code{k=2}, but this can be modified as a supplementary
-  argument. This method is ultimately carried out by
+  argument.  This method is ultimately carried out by
   \code{\link{metaMDS}} after the appropriate accessions
   and distance calculations. Because \code{metaMDS}
   includes its own distance calculation wrappers to
@@ -56,27 +56,27 @@
   \code{vegdist} methods. However, all distance methods
   supported by \code{\link{distance}} are supported here,
   including \code{"unifrac"} (the default) and
-  \code{"DPCoA"}. } \item{MDS/PCoA}{Performs principal
+  \code{"DPCoA"}.  } \item{MDS/PCoA}{Performs principal
   coordinate analysis (also called principle coordinate
   decomposition, multidimensional scaling (MDS), or
   classical scaling) of a distance matrix (Gower 1966),
   including two correction methods for negative
-  eigenvalues. See \code{\link[ape]{pcoa}} for further
-  details. } }}
+  eigenvalues.  See \code{\link[ape]{pcoa}} for further
+  details.  } }}
 
   \item{distance}{(Optional). A character string matching a
   \code{\link{distance}} method; or, alternatively, a
-  pre-computed \code{\link{dist}}-class object. This
+  pre-computed \code{\link{dist}}-class object.  This
   argument is only utilized if a distance matrix is
   required by the ordination method specified by the
   \code{method} argument (above).
 
   Any supported \code{\link{distance}} methods are
-  supported arguments to \code{distance} here. Try
+  supported arguments to \code{distance} here.  Try
   \code{distance("list")} for a explicitly supported
   distance method abbreviations. User-specified custom
   distance equations should also work, e.g.
-  \code{"(A+B-2*J)/(A+B)"}. See \code{\link{distance}} for
+  \code{"(A+B-2*J)/(A+B)"}.  See \code{\link{distance}} for
   more details, examples.}
 
   \item{...}{(Optional). Additional arguments to supporting

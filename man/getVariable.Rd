@@ -9,7 +9,7 @@
   or \code{\link{phyloseq-class}}.}
 
   \item{varName}{(Required). Character string of the
-  variable name in \code{sampleData}. Use
+  variable name in \code{sampleData}.  Use
   \code{sample.variables(physeq)} for available variables
   in your object.}
 }

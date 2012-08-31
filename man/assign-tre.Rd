@@ -5,9 +5,6 @@
 \alias{tre<-,phyloseq,phylo-method}
 \alias{tre<-,phyloseq,phyloseq-method}
 \title{Assign a (new) phylogenetic tree to \code{x}}
-\usage{
-  tre(x) <- value
-}
 \arguments{
   \item{x}{(Required). \code{\link{phyloseq-class}}}
 

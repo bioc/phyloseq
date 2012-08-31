@@ -3,9 +3,6 @@
 \alias{plot_phyloseq}
 \alias{plot_phyloseq,phyloseq-method}
 \title{Generic plot defaults for phyloseq.}
-\usage{
-  plot_phyloseq(physeq, ...)
-}
 \arguments{
   \item{physeq}{(Required). \code{\link{phyloseq-class}}.
   The actual plot type depends on the available (non-empty)
@@ -30,7 +27,7 @@
 }
 \examples{
 ## data(esophagus)
-## plot_phyloseq(esophagus)
+ ## plot_phyloseq(esophagus)
 }
 \seealso{
   \code{\link{plot_ordination}} \code{\link{plot_taxa_bar}}

@@ -8,7 +8,7 @@
   \item{pipelineName}{(Required). Character string. The
   name of the analysis tool / pipeline / package that
   created the OTU-cluster data or other data that you now
-  want to import. Current options are \code{c("mothur",
+  want to import.  Current options are \code{c("mothur",
   "pyrotagger", "QIIME", "RDP")}, and only the first letter
   is necessary.}
 
@@ -20,7 +20,7 @@
   In most cases a \code{\link{phyloseq-class}} will be
   returned, though the included component data will vary by
   pipeline/tool, and also by the types of data files
-  provided. The expected behavior is to return the
+  provided.  The expected behavior is to return the
   most-comprehensive object possible, given the provided
   arguments and pipeline/tool.
 }

@@ -3,7 +3,7 @@
 \title{Import phyloseq data from BIOM file}
 \usage{
   import_biom(BIOMfilename, taxaPrefix=NULL,
-  parallel=FALSE, version=0.9)
+    parallel=FALSE, version=0.9)
 }
 \arguments{
   \item{BIOMfilename}{(Required). A character string
@@ -30,7 +30,7 @@
   packages. One caveat, plyr-parallelization currently
   works most-cleanly with \code{multicore}-like backends
   (Mac OS X, Unix?), and may throw warnings for SNOW-like
-  backends. See the example below for code invoking
+  backends.  See the example below for code invoking
   multicore-style backend within the \code{doParallel}
   package.
 
@@ -41,10 +41,10 @@
   \code{\link{save}} function.}
 
   \item{version}{(Optional). Numeric. The expected version
-  number of the file. As the BIOM format evolves,
+  number of the file.  As the BIOM format evolves,
   version-specific importers will be available by adjusting
   the version value. Default is \code{0.9}. Not
-  implemented. Has no effect (yet).}
+  implemented.  Has no effect (yet).}
 }
 \value{
   A \code{\link{phyloseq-class}} object.
@@ -64,11 +64,11 @@
 }
 \examples{
 # # # import with default parameters, specify a file
-# import_BIOM(myBIOMfile)
-# # # Example code for importing large file with parallel backend
-# library("doParallel")
-# registerDoParallel(cores=6)
-# import_biom("my/file/path/file.biom", taxaPrefix="greengenes", parallel=TRUE)
+ # import_BIOM(myBIOMfile)
+ # # # Example code for importing large file with parallel backend
+ # library("doParallel")
+ # registerDoParallel(cores=6)
+ # import_biom("my/file/path/file.biom", taxaPrefix="greengenes", parallel=TRUE)
 }
 \references{
   \url{http://www.qiime.org/svn_documentation/documentation/biom_format.html}
