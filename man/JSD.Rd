@@ -19,7 +19,7 @@
 \value{
   An object of class ``\code{\link{dist}}'' suitable for
   certain ordination methods and other distance-based
-  analyses.  See \code{\link{distance}}.
+  analyses. See \code{\link{distance}}.
 }
 \description{
   This is a phyloseq-specific implementation of the
@@ -49,8 +49,8 @@
 # (p <- p + geom_point(size=5, alpha=0.5))
 }
 \author{
-  Susan Holmes \email{susan@stat.stanford.edu}.  Adapted
-  for phyloseq by Paul J. McMurdie.
+  Susan Holmes \email{susan@stat.stanford.edu}. Adapted for
+  phyloseq by Paul J. McMurdie.
 }
 \references{
   Jensen-Shannon Divergence and Hilbert space embedding.

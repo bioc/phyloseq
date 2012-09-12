@@ -29,7 +29,7 @@
 }
 \examples{
 # data(GlobalPatterns)
- # subset_samples(GlobalPatterns, SampleType=="Ocean")
+# subset_samples(GlobalPatterns, SampleType=="Ocean")
 }
 \seealso{
   \code{\link{subset_species}}

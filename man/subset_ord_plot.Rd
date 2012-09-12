@@ -10,14 +10,14 @@
   complete data that you want to subset.}
 
   \item{threshold}{(Optional). A numeric scalar. Default is
-  \code{0.05}.  This value determines a coordinate
-  threshold or population threshold, depending on the value
-  of the \code{method} argument, ultimately determining
-  which points are included in returned \code{data.frame}.}
+  \code{0.05}. This value determines a coordinate threshold
+  or population threshold, depending on the value of the
+  \code{method} argument, ultimately determining which
+  points are included in returned \code{data.frame}.}
 
   \item{method}{(Optional). A character string. One of
   \code{c("farthest", "radial", "square")}. Default is
-  \code{"farthest"}.  This determines how threshold will be
+  \code{"farthest"}. This determines how threshold will be
   interpreted.
 
   \describe{
@@ -30,17 +30,17 @@
   of points farthest from the origin are removed.
   Otherwise, if \code{threshold} is less than \code{1}, all
   but \code{threshold} fraction of points farthests from
-  origin are retained.  }
+  origin are retained. }
 
   \item{radial}{ Keep only those points that are beyond
   \code{threshold} radial distance from the origin. Has the
   effect of removing a circle of points from the plot,
-  centered at the origin.  }
+  centered at the origin. }
 
   \item{square}{ Keep only those points with at least one
   coordinate greater than \code{threshold}. Has the effect
   of removing a ``square'' of points from the plot,
-  centered at the origin.  }
+  centered at the origin. }
 
   }}
 }

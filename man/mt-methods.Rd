@@ -8,9 +8,12 @@
 \alias{mt,otuTable,numeric-method}
 \alias{mt,phyloseq,ANY-method}
 \title{Multiple testing of taxa abundance acccording to sample categories/classes}
+\usage{
+  mt(physeq, classlabel, minPmaxT="minP", ...)
+}
 \arguments{
   \item{physeq}{(Required). \code{\link{otuTable-class}} or
-  \code{\link{phyloseq-class}}.  In this multiple testing
+  \code{\link{phyloseq-class}}. In this multiple testing
   framework, different taxa correspond to variables
   (hypotheses), and samples to observations.}
 
@@ -33,7 +36,7 @@
   formal details.}
 
   \item{minPmaxT}{(Optional). Character string.
-  \code{"mt.minP"} or \code{"mt.maxT"}.  Default is to use
+  \code{"mt.minP"} or \code{"mt.maxT"}. Default is to use
   \code{\link[multtest]{mt.minP}}.}
 
   \item{...}{(Optional). Additional arguments, forwarded to

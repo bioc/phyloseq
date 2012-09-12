@@ -31,11 +31,11 @@
 }
 \examples{
 data(GlobalPatterns)
- ( S.GP <- estimate_richness(GlobalPatterns) )
- # # Make the plots
- # plot_richness_estimates(GlobalPatterns, "SampleType")
- # plot_richness_estimates(GlobalPatterns, "SampleType", "SampleType")
- # For more plotting examples, see plot_richness_estimates()
+( S.GP <- estimate_richness(GlobalPatterns) )
+# # Make the plots
+# plot_richness_estimates(GlobalPatterns, "SampleType")
+# plot_richness_estimates(GlobalPatterns, "SampleType", "SampleType")
+# For more plotting examples, see plot_richness_estimates()
 }
 \seealso{
   Check out the custom plotting function,

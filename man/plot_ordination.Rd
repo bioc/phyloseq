@@ -3,8 +3,8 @@
 \title{General ordination plotter based on ggplot2.}
 \usage{
   plot_ordination(physeq, ordination, type="samples",
-    axes=c(1, 2), color=NULL, shape=NULL, label=NULL,
-    title=NULL, justDF=FALSE)
+  axes=c(1, 2), color=NULL, shape=NULL, label=NULL,
+  title=NULL, justDF=FALSE)
 }
 \arguments{
   \item{physeq}{(Required). \code{\link{phyloseq-class}},
@@ -24,12 +24,12 @@
   \item{type}{(Optional). The plot type. Default is
   \code{"samples"}. The currently supported options are
   \code{c("samples", "sites", "species", "taxa", "biplot",
-  "split")}.  The option ``taxa'' is equivalent to
+  "split")}. The option ``taxa'' is equivalent to
   ``species'' in this case, and similarly, ``samples'' is
-  equivalent to ``sites''.  The options \code{"sites"} and
+  equivalent to ``sites''. The options \code{"sites"} and
   \code{"species"} result in a single-plot of just the
   sites/samples or species/taxa of the ordination,
-  respectively.  The \code{"biplot"} and \code{"split"}
+  respectively. The \code{"biplot"} and \code{"split"}
   options result in a combined plot with both taxa and
   samples, either combined into one plot (``biplot'') or
   separated in two facet panels (``split''), respectively.}
@@ -44,8 +44,8 @@
   provided ordination.}
 
   \item{color}{(Optional). Default \code{NULL}. Character
-  string.  The name of the variable to map to colors in the
-  plot.  This can be a sample variable (among the set
+  string. The name of the variable to map to colors in the
+  plot. This can be a sample variable (among the set
   returned by \code{sample.variables(physeq)} ) or
   taxonomic rank (among the set returned by
   \code{rank.names(physeq)}).
@@ -62,8 +62,8 @@
   \code{\link[ggplot2]{scale_color_manual}}.}
 
   \item{shape}{(Optional). Default \code{NULL}. Character
-  string.  The name of the variable to map to different
-  shapes on the plot.  Similar to \code{color} option, but
+  string. The name of the variable to map to different
+  shapes on the plot. Similar to \code{color} option, but
   for the shape if points.
 
   The shape scale is chosen automatically by
@@ -72,8 +72,8 @@
   \code{\link[ggplot2]{scale_shape_manual}}.}
 
   \item{label}{(Optional). Default \code{NULL}. Character
-  string.  The name of the variable to map to text labels
-  on the plot.  Similar to \code{color} option, but for
+  string. The name of the variable to map to text labels on
+  the plot. Similar to \code{color} option, but for
   plotting text.}
 
   \item{title}{(Optional). Default \code{NULL}. Character
@@ -105,15 +105,15 @@
 # data(GlobalPatterns)
 # # Define a human-associated versus non-human binary variable:
 # human.levels <- levels( getVariable(GlobalPatterns, "SampleType") ) \%in\%
-		# c("Feces", "Mock", "Skin", "Tongue")
+# c("Feces", "Mock", "Skin", "Tongue")
 # human <- human.levels[getVariable(GlobalPatterns, "SampleType")]
 # names(human) <- sample.names(GlobalPatterns)
 # # Need to clean the zeros from GlobalPatterns:
 # GP <- prune_species(speciesSums(GlobalPatterns)>0, GlobalPatterns)
 # # Get the names of the most-abundant
 # top.TaxaGroup <- sort(
-		# tapply(speciesSums(GP), taxTab(GP)[, "Phylum"], sum, na.rm = TRUE),
-		# decreasing = TRUE)
+# tapply(speciesSums(GP), taxTab(GP)[, "Phylum"], sum, na.rm = TRUE),
+# decreasing = TRUE)
 # top.TaxaGroup <- top.TaxaGroup[top.TaxaGroup > 1*10^6]
 # # Now prune further, to just the most-abundant phyla
 # GP <- subset_species(GP, Phylum \%in\% names(top.TaxaGroup))
@@ -123,7 +123,7 @@
 # plot_ordination(GP1, GP.dpcoa, type="taxa", color="Phylum")
 # plot_ordination(GP1, GP.dpcoa, type="samples", color="SampleType") + geom_line() + geom_point(size=5)
 # plot_ordination(GP1, GP.dpcoa, type="samples", color="SampleType", shape=human) +
-     # geom_line() + geom_point(size=5)
+# geom_line() + geom_point(size=5)
 # plot_ordination(GP1, GP.dpcoa, type="species", color="Phylum") + geom_line() + geom_point(size=5)
 # plot_ordination(GP1, GP.dpcoa, type="biplot", shape="Phylum", label="SampleType")
 # plot_ordination(GP1, GP.dpcoa, type="biplot", shape="Phylum")

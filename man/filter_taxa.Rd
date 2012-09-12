@@ -20,7 +20,7 @@
 }
 \value{
   A logical vector equal to the number of species (taxa) in
-  \code{physeq}.  This can be provided directly to
+  \code{physeq}. This can be provided directly to
   \code{\link{prune_species}} as first argument.
   Alternatively, if \code{prune==TRUE}, the pruned
   \code{\link{phyloseq-class}} object is returned instead.

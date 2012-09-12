@@ -88,8 +88,8 @@ setMethod("tipglom", signature("phylo"), function(tree, speciationMinLength=0.02
 #'  Output class matches the class of \code{tree}.
 #'
 #' @seealso tipglom
-#' @importFrom igraph graph.adjacency
-#' @importFrom igraph get.edgelist
+#' @importFrom igraph0 graph.adjacency
+#' @importFrom igraph0 get.edgelist
 #' @keywords internal
 tipglom.internal <- function(tree, speciationMinLength){
 	# Create adjacency matrix, where tips are adjacent

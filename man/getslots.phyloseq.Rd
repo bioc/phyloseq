@@ -23,10 +23,10 @@
 }
 \examples{
 #
- data(GlobalPatterns)
- getslots.phyloseq(GlobalPatterns)
- data(esophagus)
- getslots.phyloseq(esophagus)
+data(GlobalPatterns)
+getslots.phyloseq(GlobalPatterns)
+data(esophagus)
+getslots.phyloseq(esophagus)
 }
 \seealso{
   merge_phyloseq

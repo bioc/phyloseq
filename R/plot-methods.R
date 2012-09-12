@@ -61,7 +61,7 @@ setMethod("plot_phyloseq", "phyloseq", function(physeq, ...){
 #' Plot sample-wise microbiome network (ggplot2)
 #'
 #' A custom plotting function for displaying graph objects created by 
-#' \code{\link[igraph]{igraph}} from a 
+#' \code{\link[igraph0]{igraph}} from a 
 #' phylogenetic sequencing experiment (\code{\link{phyloseq-class}}),
 #' using advanced \code{\link[ggplot2]{ggplot}}2 formatting.
 #'
@@ -71,9 +71,9 @@ setMethod("plot_phyloseq", "phyloseq", function(physeq, ...){
 #' 	line_weight=0.5, line_color=color, line_alpha=0.4,
 #' 	layout.method=layout.fruchterman.reingold)
 #'
-#' @param g (Required). An \code{\link[igraph]{igraph}}-class object created
+#' @param g (Required). An \code{\link[igraph0]{igraph}}-class object created
 #'  either by the convenience wrapper \code{\link{make_sample_network}}, 
-#'  or directly by the tools in the igraph-package.
+#'  or directly by the tools in the igraph0-package.
 #'
 #' @param physeq (Optional). Default \code{NULL}. 
 #'  A \code{\link{phyloseq-class}} object on which \code{g} is based.
@@ -114,9 +114,9 @@ setMethod("plot_phyloseq", "phyloseq", function(physeq, ...){
 #'  for drawing a graph. Should be able to take an \code{\link{igraph}}-class
 #'  as sole argument, and return a two-column coordinate matrix with \code{nrow}
 #'  equal to the number of vertices. For possible options already included in 
-#'  \code{igraph}-package, see the others also described in the help file:
+#'  \code{igraph0}-package, see the others also described in the help file:
 #' 
-#' \code{\link[igraph]{layout.fruchterman.reingold}}
+#' \code{\link[igraph0]{layout.fruchterman.reingold}}
 #'
 #' @return A \code{\link{ggplot}}2 plot.
 #' 
@@ -131,8 +131,8 @@ setMethod("plot_phyloseq", "phyloseq", function(physeq, ...){
 #'  \url{http://www.r-bloggers.com/basic-ggplot2-network-graphs/}
 #' 
 #' @importFrom reshape melt
-#' @importFrom igraph layout.fruchterman.reingold
-#' @importFrom igraph get.edgelist
+#' @importFrom igraph0 layout.fruchterman.reingold
+#' @importFrom igraph0 get.edgelist
 #' @export
 #' @examples 
 #' 
@@ -171,15 +171,15 @@ plot_sample_network <- function(g, physeq=NULL,
 
 	# Strip all the typical annotations from the plot, leave the legend
 	p <- p + ggplot2::theme_bw() + 
-			ggplot2::opts(
-				panel.grid.major = ggplot2::theme_blank(), 
-				panel.grid.minor = ggplot2::theme_blank(), 
-				axis.text.x      = ggplot2::theme_blank(),
-				axis.text.y      = ggplot2::theme_blank(),
-				axis.title.x     = ggplot2::theme_blank(),
-				axis.title.y     = ggplot2::theme_blank(),
-				axis.ticks       = ggplot2::theme_blank(),
-				panel.border     = ggplot2::theme_blank()
+			ggplot2::theme(
+				panel.grid.major = ggplot2::element_blank(), 
+				panel.grid.minor = ggplot2::element_blank(), 
+				axis.text.x      = ggplot2::element_blank(),
+				axis.text.y      = ggplot2::element_blank(),
+				axis.title.x     = ggplot2::element_blank(),
+				axis.title.y     = ggplot2::element_blank(),
+				axis.ticks       = ggplot2::element_blank(),
+				panel.border     = ggplot2::element_blank()
 			)
 
 	# Add the graph vertices as points
@@ -339,7 +339,7 @@ plot_richness_estimates <- function(physeq, x="sample.names", color=NULL, shape=
 	p <- ggplot2::ggplot(mdf, richness_map) + 
 		ggplot2::geom_point(size=2) + 
 		ggplot2::geom_errorbar(ggplot2::aes(ymax=value + se, ymin=value - se), width=0.2) +	
-		ggplot2::opts(axis.text.x = ggplot2::theme_text(angle = -90, hjust = 0)) +
+		ggplot2::theme(axis.text.x = ggplot2::element_text(angle = -90, hjust = 0)) +
 		ggplot2::scale_y_continuous('richness [number of species]') +
 		ggplot2::facet_grid(~variable) 
 	return(p)
@@ -569,7 +569,7 @@ plot_ordination <- function(physeq, ordination, type="samples", axes=c(1, 2),
 	}
 
 	if( !is.null(title) ){
-		p <- p + ggplot2::opts(title = title)
+		p <- p + ggplot2::theme(title = title)
 	}
 	return(p)
 }
@@ -975,7 +975,7 @@ plot_taxa_bar <- function(otu, taxavec="Domain",
 	########################################
 	# Build the ggplot
 	p  <- ggplot(df) + 
-		opts(axis.text.x=theme_text(angle=-90, hjust=0))
+		theme(axis.text.x=element_text(angle=-90, hjust=0))
 
 	p <- p + 
 		# The full stack
@@ -989,9 +989,9 @@ plot_taxa_bar <- function(otu, taxavec="Domain",
 			position="dodge", stat="identity"
 		) + 
 		# Some reasonable default options
-		opts(panel.grid.minor = theme_blank()) + 
-		opts(panel.grid.major = theme_blank()) +
-		opts(panel.border = theme_blank()) +
+		theme(panel.grid.minor = element_blank()) + 
+		theme(panel.grid.major = element_blank()) +
+		theme(panel.border = element_blank()) +
 		labs(y="Relative Abundance", x=x_category, fill=fill_category)
 		
 	# Should the individual OTU points be added. Default FALSE

@@ -1,7 +1,7 @@
 \docType{data}
 \name{data-GlobalPatterns}
-\alias{data-GlobalPatterns}
 \alias{GlobalPatterns}
+\alias{data-GlobalPatterns}
 \title{(Data) Global patterns of 16S rRNA diversity at a depth of millions of sequences per sample (2011)}
 \description{
   Published in PNAS in early 2011. This work compared the
@@ -75,7 +75,7 @@
 # ggplot(DF, aes(x=Axis.1, y=Axis.2, color=SampleType)) +
 # geom_point(size=4) +
 # geom_line() +
-# opts(title = "PCoA on unweighted UniFrac distance")
+# theme(title = "PCoA on unweighted UniFrac distance")
 
 # ################################################################################
 # # Reproduce Figure 5 (but in 2-D and using jaccard distance / nmMDS)
@@ -91,7 +91,7 @@
 # ggplot(DF, aes(x=NMDS1, y=NMDS2, color=SampleType)) +
 # geom_point(size=4) +
 # geom_line() +
-# opts(title = ps("nmMDS on Jaccard distance, ", N, " axes"))
+# theme(title = ps("nmMDS on Jaccard distance, ", N, " axes"))
 
 # ################################################################################
 # # Reproduce Figure 5 (but use Jaccard distance / PCoA)
@@ -107,7 +107,7 @@
 # ggplot(DF, aes(x=Axis.1, y=Axis.2, color=SampleType)) +
 # geom_point(size=4) +
 # geom_line() +
-# opts(title = ps("PCoA on Jaccard distance, two axes"))
+# theme(title = ps("PCoA on Jaccard distance, two axes"))
 
 # ################################################################################
 # # Reproduce Figure 5, but using correspondence analysis
@@ -118,7 +118,7 @@
 # ggplot(DF, aes(x=CA1, y=CA2, color=SampleType)) +
 # geom_point(size=4) +
 # geom_line() +
-# opts(title = ps("DCA on abundances, first two axes"))
+# theme(title = ps("DCA on abundances, first two axes"))
 }
 \author{
   Caporaso, J. G., et al.
@@ -132,5 +132,4 @@
   \url{http://www.pnas.org/content/108/suppl.1/4516.short}
 }
 \keyword{data}
-\keyword{datasets}
 

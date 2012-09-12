@@ -8,14 +8,14 @@
   \item{physeq}{(Required).  A \code{\link{phyloseq-class}}
   or an \code{\link{otuTable-class}} object. The latter is
   only appropriate for methods that do not require any
-  additional data (one-table).  For example, the
-  ``unifrac'' option (\code{\link{UniFrac}}) requires
+  additional data (one-table). For example, the ``unifrac''
+  option (\code{\link{UniFrac}}) requires
   \code{\link{phyloseq-class}} that contains both an
   \code{otuTable} and a phylogenetic tree (\code{phylo}).}
 
   \item{method}{(Optional). A character string. Default is
-  \code{"unifrac"}.  Provide one of the 44 currently
-  supported options.  To see a list of supported options,
+  \code{"unifrac"}. Provide one of the 44 currently
+  supported options. To see a list of supported options,
   enter the following into the command line:
 
   \code{distance("list")}
@@ -61,13 +61,13 @@
   Takes a \code{\link{phyloseq-class}} object and method
   option, and returns a \code{\link{dist}}ance object
   suitable for certain ordination methods and other
-  distance-based analyses.  There are currently 44
+  distance-based analyses. There are currently 44
   explicitly supported method options, as well as
   user-provided arbitrary methods via an interface to
   \code{\link{designdist}}. For the complete list of
   currently supported options/arguments to the
   \code{method} parameter, type \code{distance("list")} at
-  the command-line.  Only sample-wise distances are
+  the command-line. Only sample-wise distances are
   currently supported (the \code{type} argument), but
   eventually species-wise (OTU-wise) distances will be
   supported as well.

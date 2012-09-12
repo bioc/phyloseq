@@ -1,24 +1,24 @@
 \name{make_sample_network}
 \alias{make_sample_network}
-\title{Make sample-wise microbiome network (igraph)}
+\title{Make sample-wise microbiome network (igraph0)}
 \usage{
   make_sample_network(physeq, dist.fun="jaccard", max.dist
-    = 0.4, keep.isolates=FALSE, ...)
+  = 0.4, keep.isolates=FALSE, ...)
 }
 \arguments{
-  \item{physeq}{(Required). Default \code{NULL}.  A
+  \item{physeq}{(Required). Default \code{NULL}. A
   \code{\link{phyloseq-class}} object, or
   \code{\link{otuTable-class}} object, on which \code{g} is
   based. \code{phyloseq-class} recommended.}
 
-  \item{dist.fun}{(Optional). Default "jaccard".  Any
+  \item{dist.fun}{(Optional). Default "jaccard". Any
   supported argument to the \code{method} parameter of the
-  \code{\link{distance}} function is supported here.  Some
+  \code{\link{distance}} function is supported here. Some
   distance methods, like \code{"unifrac"}, may take a
   non-trivial amount of time to calculate, in which case
   you probably want to calculate the distance matrix
   separately, save, and then provide it as the argument to
-  \code{dist.fun} instead.  See below for alternatives).
+  \code{dist.fun} instead. See below for alternatives).
 
   Alternatively, if you have already calculated the
   sample-wise distance object, the resulting
@@ -29,14 +29,14 @@
   sample-by-species matrix (typical vegan orientation) and
   returns a sample-wise distance matrix.}
 
-  \item{max.dist}{(Optional). Default \code{0.4}.  The
+  \item{max.dist}{(Optional). Default \code{0.4}. The
   maximum ecological distance (as defined by
   \code{dist.fun}) allowed between two samples to still
   consider them ``connected'' by an edge in the graphical
   model.}
 
   \item{keep.isolates}{(Optional). Default \code{FALSE}.
-  Logical.  Whether to keep isolates (un-connected samples,
+  Logical. Whether to keep isolates (un-connected samples,
   not microbial isolates) in the graphical model that is
   returned. Default results in isolates being removed from
   the object.}
@@ -45,13 +45,14 @@
   \code{\link{distance}}.}
 }
 \value{
-  A \code{\link[igraph]{igraph}}-class object.
+  A \code{\link[igraph0]{igraph}}-class object.
 }
 \description{
   A specialized function for creating graphical models of
   microbiome samples based on a user-defined ecological
   distance and threshold. The graph is ultimately built
-  with tools from the \code{\link[igraph]{igraph}}-package.
+  with tools from the
+  \code{\link[igraph0]{igraph}}-package.
 }
 \examples{
 # # Example plots with Enterotype Dataset

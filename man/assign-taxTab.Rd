@@ -9,7 +9,7 @@
   \item{x}{(Required). \code{\link{phyloseq-class}}}
 
   \item{value}{(Required).
-  \code{\link{taxonomyTable-class}}.  Alternatively,
+  \code{\link{taxonomyTable-class}}. Alternatively,
   \code{value} can be a \code{\link{phyloseq-class}} that
   has a \code{\link{taxTab}} component, or a
   \code{\link{matrix-class}} that can be coerced to a

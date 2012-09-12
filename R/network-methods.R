@@ -1,10 +1,10 @@
 ################################################################################
-#' Make sample-wise microbiome network (igraph)
+#' Make sample-wise microbiome network (igraph0)
 #'
 #' A specialized function for creating graphical models of microbiome samples
 #' based on a user-defined ecological distance and threshold.
 #' The graph is ultimately built with tools from the 
-#' \code{\link[igraph]{igraph}}-package.
+#' \code{\link[igraph0]{igraph}}-package.
 #'
 #' @usage make_sample_network(physeq, dist.fun="jaccard", max.dist = 0.4, 
 #'     keep.isolates=FALSE, ...)
@@ -44,15 +44,15 @@
 #'
 #' @param ... (Optional). Additional parameters passed on to \code{\link{distance}}.
 #'
-#' @return A \code{\link[igraph]{igraph}}-class object. 
+#' @return A \code{\link[igraph0]{igraph}}-class object. 
 #' 
 #' @seealso 
 #'  \code{\link{plot_sample_network}}
 #'
-#' @importFrom igraph graph.adjacency
-#' @importFrom igraph V
-#' @importFrom igraph delete.vertices
-#' @importFrom igraph degree
+#' @importFrom igraph0 graph.adjacency
+#' @importFrom igraph0 V
+#' @importFrom igraph0 delete.vertices
+#' @importFrom igraph0 degree
 #'
 #' @export
 #'

@@ -3,7 +3,7 @@
 \title{Plot richness estimates, flexibly with ggplot2}
 \usage{
   plot_richness_estimates(physeq, x, color=NULL,
-    shape=NULL)
+  shape=NULL)
 }
 \arguments{
   \item{physeq}{(Required). \code{\link{phyloseq-class}},
@@ -12,12 +12,12 @@
 
   \item{x}{(Optional). A variable to map to the horizontal
   axis. The vertical axis will be mapped to richness
-  estimates and have units of total species.  This
-  parameter (\code{x}) can be either a character string
-  indicating a variable in \code{sampleData} (among the set
-  returned by \code{sample.variables(physeq)} ); or a
-  custom supplied vector with length equal to the number of
-  samples in the dataset (nsamples(physeq)).
+  estimates and have units of total species. This parameter
+  (\code{x}) can be either a character string indicating a
+  variable in \code{sampleData} (among the set returned by
+  \code{sample.variables(physeq)} ); or a custom supplied
+  vector with length equal to the number of samples in the
+  dataset (nsamples(physeq)).
 
   The default value is \code{"sample.names"}, which will
   map each sample's name to a separate horizontal position
@@ -29,7 +29,7 @@
   \code{sampleData} (among the set returned by
   \code{sample.variables(physeq)} ); or a custom supplied
   vector with length equal to the number of samples in the
-  dataset (nsamples(physeq)).  The color scheme is chosen
+  dataset (nsamples(physeq)). The color scheme is chosen
   automatically by \code{link{ggplot}}, but it can be
   modified afterward with an additional layer using
   \code{\link[ggplot2]{scale_color_manual}}.}
@@ -40,7 +40,7 @@
   the variable name in \code{sampleData} (among the set
   returned by \code{sample.variables(physeq)} ); or a
   custom supplied vector with length equal to the number of
-  samples in the dataset (nsamples(physeq)).  The shape
+  samples in the dataset (nsamples(physeq)). The shape
   scale is chosen automatically by \code{link{ggplot}}, but
   it can be modified afterward with an additional layer
   using \code{\link[ggplot2]{scale_shape_manual}}.}
@@ -66,7 +66,7 @@
   names of that output should not be used as \code{x} or
   \code{color} (even if it works, the resulting plot might
   be kindof strange, and not the intended behavior of this
-  function).  The following are the names you will want to
+  function). The following are the names you will want to
   avoid using in \code{x} or \code{color}:
 
   \code{c("S.obs", "S.chao1", "se.chao1", "S.ACE",
