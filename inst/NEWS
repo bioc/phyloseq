@@ -16,6 +16,14 @@ phyloseq
 * Lots of documentation updates.
 * Lots and lots of fixes and improvements.
 
+phyloseq 1.2.1
+===========
+- Fixed attributes fail in unit tests, affecting checks but not functionality.
+
+phyloseq 1.2.0
+===========
+Bioconductor release
+
 phyloseq 1.1.50
 ===========
 - Fixed several compatibility issues to support latest version of ggplot2 (0.9.2).

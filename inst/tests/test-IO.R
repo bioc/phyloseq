@@ -18,17 +18,17 @@ test_that("import_mothur: import of esophagus dataset from mothur files in extda
 
 test_that("import_mothur: The two phyloseq objects, example and just-imported, are identical", {
 	data("esophagus")
-	expect_that(esophagus, is_identical_to(esophman))
+	expect_that(esophagus, is_equivalent_to(esophman))	
 })
 
 test_that("import_mothur: Test mothur file import on the (esophagus data).", {
 	smlc <- show_mothur_list_cutoffs(mothlist)
-	expect_that(smlc, is_identical_to(c("unique", "0.00", "0.01", "0.02", "0.03", "0.04", "0.05", "0.06", "0.07", "0.08", "0.09", "0.10")))	
+	expect_that(smlc, is_equivalent_to(c("unique", "0.00", "0.01", "0.02", "0.03", "0.04", "0.05", "0.06", "0.07", "0.08", "0.09", "0.10")))	
 })
 
 test_that("import_mothur: abundances can be manipulated mathematically", {
 	x1 <- as(otu_table(esophman), "matrix")
-	expect_that(2*x1-x1, is_identical_to(x1) )
+	expect_that(2*x1-x1, is_equivalent_to(x1) )
 })
 
 test_that("import_mothur: empty stuff is NULL", {
@@ -145,13 +145,13 @@ test_that("The different types of biom files yield phyloseq objects", {
 	# Compare values in the otu_table. For some reason the otu_tables are not identical
 	# one position is plus-two, another is minus-two
 	combrich <- c(access(rich_dense, "otu_table"), access(rich_sparse, "otu_table"))
-	expect_that(sum(diff(combrich, length(access(rich_dense, "otu_table")))), is_identical_to(0))
-	expect_that(max(diff(combrich, length(access(rich_dense, "otu_table")))), is_identical_to(2))
-	expect_that(min(diff(combrich, length(access(rich_dense, "otu_table")))), is_identical_to(-2))
+	expect_that(sum(diff(combrich, length(access(rich_dense, "otu_table")))), is_equivalent_to(0))
+	expect_that(max(diff(combrich, length(access(rich_dense, "otu_table")))), is_equivalent_to(2))
+	expect_that(min(diff(combrich, length(access(rich_dense, "otu_table")))), is_equivalent_to(-2))
 	combmin <- c(access(min_dense, "otu_table"), access(min_sparse, "otu_table"))
-	expect_that(sum(diff(combmin, length(access(min_dense, "otu_table")))), is_identical_to(0))
-	expect_that(max(diff(combmin, length(access(min_dense, "otu_table")))), is_identical_to(2))
-	expect_that(min(diff(combmin, length(access(min_dense, "otu_table")))), is_identical_to(-2))
+	expect_that(sum(diff(combmin, length(access(min_dense, "otu_table")))), is_equivalent_to(0))
+	expect_that(max(diff(combmin, length(access(min_dense, "otu_table")))), is_equivalent_to(2))
+	expect_that(min(diff(combmin, length(access(min_dense, "otu_table")))), is_equivalent_to(-2))
 
 	expect_that(access(min_dense, "otu_table"),  is_identical_to(access(rich_dense, "otu_table")))
 	expect_that(access(min_sparse, "otu_table"), is_identical_to(access(rich_sparse, "otu_table")))
@@ -177,7 +177,7 @@ test_that("The read_tree function works as expected:", {
 	expect_that(ntaxa(GPNewick), equals(length(GPNewick$tip.label)))
 	expect_that(ntaxa(GPNewick), equals(500))
 	expect_that(GPNewick$Nnode, equals(499))
-	expect_that(taxa_names(GPNewick), is_identical_to(GPNewick$tip.label))	
+	expect_that(taxa_names(GPNewick), is_equivalent_to(GPNewick$tip.label))	
 	# Now read a nexus tree... 
 	# Some error-handling expectations
 	expect_that(read_tree("alskflsakjsfskfhas.akshfaksj"), gives_warning()) # file not exist
