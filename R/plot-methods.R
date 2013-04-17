@@ -2462,6 +2462,8 @@ plot_heatmap <- function(physeq, method="NMDS", distance="bray",
 		# Make a sample-named vector of the values for sample.label
 		labvec <- as(get_variable(physeq, sample.label), "vector")
 		names(labvec) <- sample_names(physeq)
+		# Replace NA values with ""
+		labvec[is.na(labvec)] <- ""
 		if( !is.null(sample.order) ){
 			# Re-order according to sample.order
 			labvec <- labvec[sample.order]			
@@ -2473,6 +2475,8 @@ plot_heatmap <- function(physeq, method="NMDS", distance="bray",
 		# Make a species-named vector of the values for species.label
 		labvec <- as(tax_table(physeq)[, species.label], "vector")
 		names(labvec) <- taxa_names(physeq)
+		# Replace NA values with ""
+		labvec[is.na(labvec)] <- ""
 		if( !is.null(species.order) ){		
 			# Re-order according to species.order
 			labvec <- labvec[species.order]
