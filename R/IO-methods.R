@@ -1636,9 +1636,18 @@ import_biom <- function(BIOMfilename,
 	########################################
 	# Check if sparse. Must parse differently than dense
 	if( x$matrix_type == "sparse" ){
+		# Initialize with zeros. Sparse.
 		otumat = matrix(0, nrow=x$shape[1], ncol=x$shape[2])
-		dummy  = sapply(x$data, function(i){otumat[(i[1]+1), (i[2]+1)] <<- i[3]})
+		# Use ldply to create indexing data.frame, s0, useful for (fast) matrix indexing
+		s0 = ldply(x$data)
+		# biom matrix indexing starts at 0 (python)
+		s0[, 1] <- s0[, 1] + 1
+		s0[, 2] <- s0[, 2] + 1
+		# Fill in values in matrix.
+		# Vectorized for speed using matrix indexing. See help("Extract")
+		otumat[cbind(s0[, 1], s0[, 2])] <- s0[, 3]
 	}
+	
 	# parse the dense matrix instead.
 	if( x$matrix_type == "dense" ){
 		# each row will be complete data values, should use laply
