@@ -18,6 +18,10 @@ phyloseq
 * Lots of documentation updates.
 * Lots and lots of fixes and improvements.
 
+phyloseq 1.4.5 - Change dependency to igraph from igraph0
+===========
+- This is required. CRAN is removing igraph0 in a few days.
+
 phyloseq 1.4.3 - Speed improvement for import_biom
 ===========
 - Fixed speed bottleneck for sparse matrices in import_biom().
