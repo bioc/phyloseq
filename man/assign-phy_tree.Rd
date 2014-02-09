@@ -4,7 +4,6 @@
 \alias{phy_tree<-}
 \alias{phy_tree<-,phyloseq,phylo-method}
 \alias{phy_tree<-,phyloseq,phyloseq-method}
-\alias{tre<-}
 \title{Assign a (new) phylogenetic tree to \code{x}}
 \usage{
   phy_tree(x) <- value
@@ -22,10 +21,10 @@
 #
 # data(GlobalPatterns)
 # # An example of pruning to just the first 100 taxa in GlobalPatterns.
-# ex2a <- prune_species(taxa_names(GlobalPatterns)[1:100], GlobalPatterns)
+# ex2a <- prune_taxa(taxa_names(GlobalPatterns)[1:100], GlobalPatterns)
 # # The following 3 lines produces an ex2b that is equal to ex2a
 # ex2b <- GlobalPatterns
-# tree <- prune_species(taxa_names(GlobalPatterns)[1:100], phy_tree(GlobalPatterns))
+# tree <- prune_taxa(taxa_names(GlobalPatterns)[1:100], phy_tree(GlobalPatterns))
 # phy_tree(ex2b) <- tree
 # identical(ex2a, ex2b)
 # print(ex2b)

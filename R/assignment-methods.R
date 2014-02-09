@@ -12,12 +12,12 @@
 #' @export
 #' @docType methods
 #' @rdname assign-otu_table
-#' @aliases assign-otu_table otu_table<- otuTable<-
+#' @aliases assign-otu_table otu_table<-
 #'
 #' @examples
 #' # data(GlobalPatterns)
 #' # # An example of pruning to just the first 100 taxa in GlobalPatterns.
-#' # ex2a <- prune_species(taxa_names(GlobalPatterns)[1:100], GlobalPatterns)
+#' # ex2a <- prune_taxa(taxa_names(GlobalPatterns)[1:100], GlobalPatterns)
 #' # # The following 3 lines produces an ex2b that is equal to ex2a
 #' # ex2b <- GlobalPatterns
 #' # OTU <- otu_table(GlobalPatterns)[1:100, ]
@@ -59,7 +59,7 @@ setMethod("otu_table<-", c("phyloseq", "phyloseq"), function(x, value){
 #' @export
 #' @docType methods
 #' @rdname assign-taxa_are_rows
-#' @aliases assign-taxa_are_rows taxa_are_rows<- speciesAreRows<-
+#' @aliases assign-taxa_are_rows taxa_are_rows<- 
 #'
 #' @examples #
 #' # data(GlobalPatterns)
@@ -114,7 +114,7 @@ setMethod("taxa_are_rows<-", c("phyloseq", "logical"), function(x, value){
 #'
 #' @export
 #' @rdname assign-sample_data
-#' @aliases assign-sample_data sample_data<- sam_data<- sampleData<-
+#' @aliases assign-sample_data sample_data<-
 #' @examples #
 #' # data(GlobalPatterns)
 #' # # An example of pruning to just the first 10 samples in GlobalPatterns
@@ -152,11 +152,11 @@ setMethod("taxa_are_rows<-", c("phyloseq", "logical"), function(x, value){
 #'
 #' @export
 #' @rdname assign-tax_table
-#' @aliases assign-tax_table tax_table<- taxTab<-
+#' @aliases assign-tax_table tax_table<-
 #' @examples #
 #' # data(GlobalPatterns)
 #' # # An example of pruning to just the first 100 taxa in GlobalPatterns.
-#' # ex2a <- prune_species(taxa_names(GlobalPatterns)[1:100], GlobalPatterns)
+#' # ex2a <- prune_taxa(taxa_names(GlobalPatterns)[1:100], GlobalPatterns)
 #' # # The following 3 lines produces an ex2b that is equal to ex2a
 #' # ex2b <- GlobalPatterns
 #' # TT <- tax_table(GlobalPatterns)[1:100, ]
@@ -202,14 +202,14 @@ setMethod("tax_table<-", c("taxonomyTable", "ANY"), function(x, value){
 #' @export
 #' @docType methods
 #' @rdname assign-phy_tree
-#' @aliases assign-phy_tree phy_tree<- tre<-
+#' @aliases assign-phy_tree phy_tree<-
 #' @examples #
 #' # data(GlobalPatterns)
 #' # # An example of pruning to just the first 100 taxa in GlobalPatterns.
-#' # ex2a <- prune_species(taxa_names(GlobalPatterns)[1:100], GlobalPatterns)
+#' # ex2a <- prune_taxa(taxa_names(GlobalPatterns)[1:100], GlobalPatterns)
 #' # # The following 3 lines produces an ex2b that is equal to ex2a
 #' # ex2b <- GlobalPatterns
-#' # tree <- prune_species(taxa_names(GlobalPatterns)[1:100], phy_tree(GlobalPatterns))
+#' # tree <- prune_taxa(taxa_names(GlobalPatterns)[1:100], phy_tree(GlobalPatterns))
 #' # phy_tree(ex2b) <- tree
 #' # identical(ex2a, ex2b)
 #' # print(ex2b)

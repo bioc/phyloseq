@@ -183,26 +183,7 @@ NA
 #' ################################################################################
 #' # Graphically compare richness between the different treatments.
 #' man.col <- c(WC="red", WU="brown", UC="blue", UU="darkgreen")
-#' (p <- plot_richness_estimates(soilrep, x="Treatment", color="Treatment") )
-#' # Add boxplots using ggplot2
-#' # library(ggplot2)
-#' # p + geom_boxplot() + scale_color_manual(values=man.col)
-#' # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-#' # The treatments do not appear to have affected the
-#' # estimated total richness between warmed/unwarmed soil samples
-#' # Test this formally:
-#' DF <- data.frame(sample_data(soilrep), estimate_richness(soilrep) )
-#' t.test(x=subset(DF, warmed=="yes")[, "Chao1"], y=subset(DF, warmed=="no")[, "Chao1"])
-#' ################################################################################
-#' # A beta diversity comparison.
-#' ################################################################################
-#' # Perform non-metric multidimensional scaling, using Bray-Curtis distance
-#' soil.NMDS <- ordinate(soilrep, "NMDS", "bray")
-#' (p <- plot_ordination(soilrep, soil.NMDS, "samples", color="Treatment") )
-#' # Additional formatting using ggplot2
-#' # library(ggplot2)
-#' # ( p <- p + geom_point(size=5, alpha=0.5) + facet_grid(warmed ~ clipped) )
-################################################################################
+#' plot_richness(soilrep, x="Treatment", color="Treatment", measures=c("Observed", "Chao1", "Shannon"))
 NA
 ################################################################################
 ################################################################################
@@ -249,7 +230,7 @@ NA
 #' @examples
 #' data(GlobalPatterns)
 #' # Remove unobserved taxa
-#' GP0   <- prune_species(taxa_sums(GlobalPatterns)>0, GlobalPatterns)
+#' GP0   <- prune_taxa(taxa_sums(GlobalPatterns)>0, GlobalPatterns)
 #' # Perform ordination (in this case, detrended correspondence analysis)
 #' gpdca <- ordinate(GP0, "DCA")
 #' # Create plot of samples

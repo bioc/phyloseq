@@ -79,7 +79,7 @@ test_that("Class of import result is phyloseq-class", {
 test_that("Classes of components are as expected", {
 	expect_that(otu_table(t0), is_a("otu_table"))
 	expect_that(tax_table(t0), is_a("taxonomyTable"))
-	expect_that(sam_data(t0), is_a("sample_data"))
+	expect_that(sample_data(t0), is_a("sample_data"))
 	expect_that(phy_tree(t0), is_a("phylo"))		
 	expect_that(refseq(t0), is_a("DNAStringSet"))
 })

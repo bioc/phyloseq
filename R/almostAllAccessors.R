@@ -300,7 +300,7 @@ setMethod("nsamples", "sample_data", function(physeq) nrow(physeq) )
 #'
 #' @seealso \code{\link{taxa_names}}, \code{\link{nsamples}}
 #' 
-#' @aliases sample_names sampleNames
+#' @aliases sample_names
 #'
 #' @rdname sample_names-methods
 #' @docType methods

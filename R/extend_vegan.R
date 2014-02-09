@@ -189,14 +189,18 @@ estimate_richness <- function(physeq, split=TRUE, measures=NULL){
 	  outlist <- c(outlist, list(invsimpson = diversity(OTU, index="invsimpson")))
 	}
 	if( "Fisher" %in% measures ){
-    fisher = tryCatch(fisher.alpha(OTU, se=TRUE), 
-      warning=function(w){
-        warning("phyloseq::estimate_richness: Warning in fisher.alpha(). See `?fisher.fit` or ?`fisher.alpha`. Treat fisher results with caution")
-        suppressWarnings(fisher.alpha(OTU, se=TRUE)[, c("alpha", "se")])
-      }
-    )
-	  colnames(fisher) <- c("Fisher", "se.fisher")
-	  outlist <- c(outlist, list(fisher))
+	  fisher = tryCatch(fisher.alpha(OTU, se=TRUE), 
+	                    warning=function(w){
+	                      warning("phyloseq::estimate_richness: Warning in fisher.alpha(). See `?fisher.fit` or ?`fisher.alpha`. Treat fisher results with caution")
+	                      suppressWarnings(fisher.alpha(OTU, se=TRUE)[, c("alpha", "se")])
+	                    }
+	  )
+	  if(!is.null(dim(fisher))){
+	    colnames(fisher)[1:2] <- c("Fisher", "se.fisher")
+	    outlist <- c(outlist, list(fisher))
+	  } else {
+	    outlist <- c(outlist, Fisher=list(fisher))
+	  }
 	}
   out = do.call("cbind", outlist)
   # Rename columns per renamevec

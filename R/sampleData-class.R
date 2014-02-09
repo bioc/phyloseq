@@ -8,17 +8,13 @@
 #' When the
 #' argument is a data.frame, sample_data() will create a sample_data-class object.
 #' In this case, the rows should be named to match the
-#' \code{sample.names} of the other objects to which it will ultimately be paired.
+#' \code{sample_names} of the other objects to which it will ultimately be paired.
 #' Alternatively, if the first argument is an experiment-level (\code{\link{phyloseq-class}})
 #' object, then the corresponding \code{sample_data} is returned.
 #' Like other accessors (see See Also, below), the default behavior of this method
 #' is to stop with an
 #' error if \code{object} is a \code{phyloseq-class} but does not 
 #' contain a \code{sample_data}.
-#'
-#' Note that the \code{sam_data()} and \code{sampleMap()} functions are provided
-#' for convenience and backward compatibility, respectively, but should provide
-#' the exact same behavior as \code{sample_data()}.
 #'
 #' @usage sample_data(object, errorIfNULL=TRUE)
 #'
@@ -34,7 +30,7 @@
 #' @seealso \code{\link{phy_tree}}, \code{\link{tax_table}}, \code{\link{otu_table}}
 #'  \code{\link{phyloseq}}, \code{\link{merge_phyloseq}}
 #'
-#' @aliases sample_data sampleData sam_data samData
+#' @aliases sample_data 
 #'
 #' @rdname sample_data-methods
 #' @docType methods
@@ -44,7 +40,7 @@
 #' # data(GlobalPatterns)
 #' # sample_data(GlobalPatterns)
 #' ## shorter (convenience) wrapper of sample_data()
-#' # sam_data(GlobalPatterns)
+#' # sample_data(GlobalPatterns)
 setGeneric("sample_data", function(object, errorIfNULL=TRUE) standardGeneric("sample_data"))
 #' @rdname sample_data-methods
 #' @aliases sample_data,ANY-method

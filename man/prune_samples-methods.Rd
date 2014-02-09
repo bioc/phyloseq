@@ -35,7 +35,7 @@ data(GlobalPatterns)
 # Subset to just the Chlamydiae phylum.
 GP.chl <- subset_taxa(GlobalPatterns, Phylum=="Chlamydiae")
 # Remove the samples that have less than 20 total reads from Chlamydiae
-GP.chl <- prune_samples(sampleSums(GP.chl)>=20, GP.chl)
+GP.chl <- prune_samples(sample_sums(GP.chl)>=20, GP.chl)
 # (p <- plot_tree(GP.chl, color="SampleType", shape="Family", label.tips="Genus", size="abundance"))
 }
 \seealso{

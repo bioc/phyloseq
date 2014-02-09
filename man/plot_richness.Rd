@@ -1,15 +1,10 @@
 \name{plot_richness}
 \alias{plot_richness}
-\alias{plot_richness_estimates}
 \title{Plot alpha diversity, flexibly with ggplot2}
 \usage{
   plot_richness(physeq, x = "samples", color = NULL, shape
   = NULL, title = NULL, scales = "free_y", nrow = 1, shsi =
   NULL, measures = NULL)
-
-  plot_richness_estimates(physeq, x = "samples", color =
-  NULL, shape = NULL, title = NULL, scales = "free_y", nrow
-  = 1, shsi = NULL, measures = NULL)
 }
 \arguments{
   \item{physeq}{(Required). \code{\link{phyloseq-class}},

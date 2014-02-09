@@ -1,13 +1,9 @@
 \name{sample_data<-}
 \alias{assign-sample_data}
-\alias{sam_data<-}
 \alias{sample_data<-}
-\alias{sampleData<-}
 \title{Assign (new) sample_data to \code{x}}
 \usage{
   sample_data(x) <- value
-
-  sam_data(x) <- value
 }
 \arguments{
   \item{x}{(Required). \code{\link{phyloseq-class}}. The
