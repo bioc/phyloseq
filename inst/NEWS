@@ -1,3 +1,17 @@
+CHANGES IN VERSION 1.8.1
+-------------------------
+
+BUG FIXES
+
+	- Large files cause import_usearch_uc() to have error.
+		Error in paste0(readLines(ucfile), collapse = "\n") : result would exceed 2^31-1 bytes
+
+	- Solves Issue 327: https://github.com/joey711/phyloseq/issues/327
+
+	- Bug in `psmelt` causing unnecessary error for phyloseq datasets with empty components.
+
+	- Solves Issue 319: https://github.com/joey711/phyloseq/issues/319
+
 CHANGES IN VERSION 1.7.24
 -------------------------
 
